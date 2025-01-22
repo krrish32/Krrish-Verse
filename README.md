@@ -34,4 +34,4 @@ To run this project on your local machine, you'll need to have the following ins
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/KrrishGulia/KrrishVerse.git
+   git clone https://github.com/krrish32/Krrish-Verse.git
