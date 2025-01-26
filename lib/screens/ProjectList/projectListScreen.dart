@@ -1,9 +1,21 @@
 import 'package:KrrishVerse/res/appColors.dart';
+import 'package:KrrishVerse/screens/ProjectList/projectListController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ProjectListScreen extends StatelessWidget {
+class ProjectListScreen extends StatefulWidget {
+
+
+  const ProjectListScreen({super.key});
+
+  @override
+  State<ProjectListScreen> createState() => _ProjectListScreenState();
+}
+
+class _ProjectListScreenState extends State<ProjectListScreen> {
+  ProjectListController projectListController = Get.put(ProjectListController());
+
   final List<Map<String, String>> projects = [
     {
       'title': 'Portfolio App',
@@ -23,8 +35,6 @@ class ProjectListScreen extends StatelessWidget {
     },
   ];
 
-  ProjectListScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,22 +51,24 @@ class ProjectListScreen extends StatelessWidget {
         ),
         backgroundColor: AppColors.backgroundColor, // Changed to dark shade
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-            color :AppColors.backgroundColor
-        ),
-        child: ListView.builder(
-          padding: EdgeInsets.symmetric(
-            horizontal: Get.width * 0.04,
-            vertical: Get.height * 0.02,
+      body: Obx(()=> projectListController.isLoading.value? Center(child: CircularProgressIndicator(color: AppColors.softGreen,)):
+         Container(
+          decoration: const BoxDecoration(
+              color :AppColors.backgroundColor
           ),
-          itemCount: projects.length,
-          itemBuilder: (context, index) {
-            return _buildProjectCard(
-              title: projects[index]['title']!,
-              description: projects[index]['description']!,
-            );
-          },
+          child: ListView.builder(
+            padding: EdgeInsets.symmetric(
+              horizontal: Get.width * 0.04,
+              vertical: Get.height * 0.02,
+            ),
+            itemCount: projectListController.projectList.length,
+            itemBuilder: (context, index) {
+              return _buildProjectCard(
+                title: projectListController.projectList[index].name!,
+                description: projectListController.projectList[index].description??"",
+              );
+            },
+          ),
         ),
       ),
     );
