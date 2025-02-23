@@ -1,4 +1,4 @@
-# KrrishVerse Mobile Application
+# KrrishVerse
 
 KrrishVerse is a personal portfolio mobile application developed using Flutter. It showcases my skills, projects, experiences, and achievements in a dynamic and interactive way. This app is designed to demonstrate my proficiency in mobile app development and provide an overview of my work and expertise.
 

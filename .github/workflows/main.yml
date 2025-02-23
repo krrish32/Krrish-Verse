@@ -1,0 +1,32 @@
+name: Build Flutter APK on Tag
+
+on:
+  push:
+    tags:
+      - '*' # Runs on any tag creation
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-apk-${{ github.ref_name }}
+          path: build/app/outputs/flutter-apk/app-release.apk
