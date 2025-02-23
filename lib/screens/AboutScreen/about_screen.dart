@@ -13,14 +13,7 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [AppColors.softGreen, AppColors.lightNeutral],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
+      body: Container(color: AppColors.backgroundColor,
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(Get.width * 0.04),
@@ -38,7 +31,7 @@ class AboutScreen extends StatelessWidget {
                   style: GoogleFonts.orbitron(
                     fontSize: Get.width * 0.08,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.backgroundColor,
+                    color: AppColors.white,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -47,13 +40,13 @@ class AboutScreen extends StatelessWidget {
                   'Software Developer',
                   style: GoogleFonts.aBeeZee(
                     fontSize: Get.width * 0.05,
-                    color: AppColors.backgroundColor.withOpacity(0.7),
+                    color: AppColors.white.withOpacity(0.7),
                     fontStyle: FontStyle.italic,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const Divider(
-                  color: AppColors.softGreen,
+                  color: AppColors.white,
                   thickness: 1,
                 ),
                 SizedBox(height: Get.height * 0.02),
@@ -61,12 +54,12 @@ class AboutScreen extends StatelessWidget {
                   'I am a passionate software developer with experience in mobile and web development. I enjoy learning new technologies and working on innovative projects during my free time.'
                   ,style: GoogleFonts.aBeeZee(
                     fontSize: Get.width * 0.04,
-                    color: AppColors.backgroundColor.withOpacity(0.7),
+                    color: AppColors.white.withOpacity(0.7),
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const Divider(
-                  color: AppColors.softGreen,
+                  color: AppColors.white,
                   thickness: 1,
                 ),
                 SizedBox(height: Get.height * 0.02),
@@ -75,7 +68,7 @@ class AboutScreen extends StatelessWidget {
                   style: GoogleFonts.orbitron(
                     fontSize: Get.width * 0.05,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.backgroundColor,
+                    color: AppColors.white,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -86,12 +79,12 @@ class AboutScreen extends StatelessWidget {
                       '• Travelling',
                   style: GoogleFonts.aBeeZee(
                     fontSize: Get.width * 0.045,
-                    color: AppColors.backgroundColor.withOpacity(0.8),
+                    color: AppColors.white.withOpacity(0.8),
                   ),
                   textAlign: TextAlign.start,
                 ),
                 const Divider(
-                  color: AppColors.softGreen,
+                  color: AppColors.white,
                   thickness: 1,
                 ),
                 SizedBox(height: Get.height * 0.02),
@@ -138,11 +131,11 @@ class AboutScreen extends StatelessWidget {
           Navigator.pushNamed(context, route);
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.softGreen,
+          backgroundColor: AppColors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          shadowColor: AppColors.softGreen.withOpacity(0.5),
+          shadowColor: AppColors.white.withOpacity(0.5),
           elevation: 8,
         ),
         child: Padding(
@@ -178,7 +171,7 @@ class AboutScreen extends StatelessWidget {
           icon: Image.asset(
             AppIcons.linkedInIcon,
             scale: 1.5,
-            color: AppColors.backgroundColor,
+            color: AppColors.lightNeutral,
           ),
         ),
         SizedBox(width: Get.width * 0.05),
@@ -188,7 +181,7 @@ class AboutScreen extends StatelessWidget {
           },
           icon: Image.asset(
             AppIcons.githubIcon,
-            color: AppColors.backgroundColor,
+            color: AppColors.lightNeutral,
             scale: 1.5,
           ),
         ),

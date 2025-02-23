@@ -37,23 +37,20 @@ class EducationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+            color: AppColors.white
+        ),
         title: Text(
           'Education',
           style: GoogleFonts.orbitron(
-            color: AppColors.lightNeutral,
+            color: AppColors.white,
             fontSize: Get.width * 0.06,
           ),
         ),
         backgroundColor: AppColors.backgroundColor,  // Changed to Dark Shade
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [AppColors.backgroundColor, AppColors.lightNeutral],  // Changed to use provided colors
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
+        color: AppColors.backgroundColor,
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: Get.width * 0.04,
@@ -89,11 +86,11 @@ class EducationScreen extends StatelessWidget {
     return Container(
       width: Get.width * 0.9, // Adjust width for consistent layout
       decoration: BoxDecoration(
-        color: AppColors.lightNeutral,  // Changed to Light Neutral
+        color: AppColors.white,  // Changed to Light Neutral
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            color: AppColors.softGreen.withOpacity(0.5),  // Changed to Vibrant Orange
+            color: AppColors.white.withOpacity(0.5),  // Changed to Vibrant Orange
             blurRadius: 6,
             offset: const Offset(0, 3),
           ),
@@ -109,7 +106,7 @@ class EducationScreen extends StatelessWidget {
               style: GoogleFonts.orbitron(
                 fontSize: Get.width * 0.05,
                 fontWeight: FontWeight.bold,
-                color: AppColors.softGreen,  // Changed to Vibrant Orange
+                color: AppColors.backgroundColor,  // Changed to Vibrant Orange
               ),
             ),
             SizedBox(height: Get.height * 0.01),

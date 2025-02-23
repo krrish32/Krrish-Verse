@@ -24,8 +24,10 @@ class PortfolioApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       getPages: [
         GetPage(name: '/', page: () => const MainScreen()),
-        GetPage(name: '/projectDetail', page: () => ProjectDetailScreen()),
-        GetPage(name: '/about', page: () => const AboutScreen()),
+        GetPage(
+          name: '/projectDetail',
+          page: () => ReadmeScreen(projectName: Get.parameters['name'] ?? ""),
+        ),        GetPage(name: '/about', page: () => const AboutScreen()),
         GetPage(name: '/contact', page: () => ContactScreen()),
         GetPage(name: '/projectList', page: () => const ProjectListScreen()),
         GetPage(name: '/Experience', page: ()=>ExperienceScreen()),

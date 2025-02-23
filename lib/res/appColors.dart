@@ -2,8 +2,9 @@ import 'dart:ui';
 
 class AppColors {
   AppColors._();
-  static const backgroundColor = Color(0xFF292D34); // Dark Shade
-  //static const vibrantColor = Color(0xFFFE7648);    // Vibrant Orange
-  static const softGreen = Color(0xFF7BC678);       // Soft Green
-  static const lightNeutral = Color(0xFFDDEEDD);    // Light Neutral
+
+  static const backgroundColor = Color(0xFF000000); // Black
+  static const white = Color(0xFFFFFFFF);       // White
+  static const lightNeutral = Color(0xFFB0B0B0);
+  static const buttonBackgroundColor = Color(0xFF4169e1);// Grey
 }

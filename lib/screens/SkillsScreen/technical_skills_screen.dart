@@ -40,13 +40,7 @@ class SkillsScreen extends StatelessWidget {
         backgroundColor: AppColors.backgroundColor, // Changed to dark shade
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [AppColors.backgroundColor, AppColors.lightNeutral], // Changed to use dark shade and light neutral
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
+        color: AppColors.backgroundColor,
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: Get.width * 0.04,
@@ -79,7 +73,7 @@ class SkillsScreen extends StatelessWidget {
           style: GoogleFonts.orbitron(
             fontSize: Get.width * 0.06,
             fontWeight: FontWeight.bold,
-            color: AppColors.softGreen, // Changed to vibrant color
+            color: AppColors.white, // Changed to vibrant color
           ),
         ),
         SizedBox(height: Get.height * 0.02),

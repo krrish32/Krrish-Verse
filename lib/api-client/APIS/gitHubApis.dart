@@ -27,6 +27,17 @@ class GitHubApiClient {
     }
   }
 
+  Future<dynamic> getProjectReadme(String name)async{
+    try{
+      final response = await http.get(Uri.parse('$baseUrl${Endpoints.gitRepoReadmeUrlEndpoint(name)}'));
+      return _handleResponse(response);
+    }
+    catch(err){
+      throw Exception('Get Project Readme failed: $err');
+    }
+  }
+
+
   // POST Request
   Future<dynamic> post(String endpoint, Map<String, dynamic> body) async {
     try {

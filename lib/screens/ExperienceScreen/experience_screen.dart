@@ -27,23 +27,20 @@ class ExperienceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: AppColors.white
+        ),
         title: Text(
           'Experience',
           style: GoogleFonts.orbitron(
-            color: AppColors.lightNeutral,
+            color: AppColors.white,
             fontSize: Get.width * 0.06,
           ),
         ),
         backgroundColor: AppColors.backgroundColor,  // Changed to Dark Shade
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [AppColors.backgroundColor, AppColors.lightNeutral],  // Changed to use provided colors
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
+        color: AppColors.backgroundColor,
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: Get.width * 0.04,
@@ -74,15 +71,8 @@ class ExperienceScreen extends StatelessWidget {
       margin: EdgeInsets.only(bottom: Get.height * 0.02),
       padding: EdgeInsets.all(Get.width * 0.04),
       decoration: BoxDecoration(
-        color: AppColors.lightNeutral,  // Changed to Light Neutral
+        color: AppColors.white,  // Changed to Light Neutral
         borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.softGreen.withOpacity(0.5),  // Changed to Vibrant Orange
-            blurRadius: 6,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +82,7 @@ class ExperienceScreen extends StatelessWidget {
             style: GoogleFonts.orbitron(
               fontSize: Get.width * 0.05,
               fontWeight: FontWeight.bold,
-              color: AppColors.softGreen,  // Changed to Vibrant Orange
+              color: AppColors.backgroundColor,  // Changed to Vibrant Orange
             ),
           ),
           SizedBox(height: Get.height * 0.01),

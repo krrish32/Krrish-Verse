@@ -29,7 +29,7 @@ class MainScreen extends StatelessWidget {
                     shadows: [
                       Shadow(
                         blurRadius: 15.0,
-                        color: AppColors.softGreen.withOpacity(0.8), // Changed to vibrant orange
+                        color: AppColors.white.withOpacity(0.8), // Changed to vibrant orange
                         offset: const Offset(0, 0),
                       ),
                     ],
@@ -42,7 +42,7 @@ class MainScreen extends StatelessWidget {
                   style: GoogleFonts.orbitron(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.softGreen, // Changed to vibrant orange
+                    color: AppColors.white, // Changed to vibrant orange
                     letterSpacing: 3,
                     shadows: [
                       Shadow(
@@ -65,7 +65,7 @@ class MainScreen extends StatelessWidget {
                 // Navigate to EducationScreen
                 Get.toNamed('/about');
               },
-              backgroundColor: AppColors.softGreen, // Changed to vibrant orange
+              backgroundColor: AppColors.white, // Changed to vibrant orange
               child: const Icon(
                 Icons.arrow_forward,
                 color: AppColors.backgroundColor, // Changed to dark shade

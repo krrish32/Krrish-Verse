@@ -40,18 +40,18 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(
-          color: AppColors.lightNeutral
+          color: AppColors.white
         ),
         title: Text(
           'Projects',
           style: GoogleFonts.orbitron(
-            color: AppColors.lightNeutral, // Changed to light neutral
+            color: AppColors.white, // Changed to light neutral
             fontSize: Get.width * 0.06,
           ),
         ),
         backgroundColor: AppColors.backgroundColor, // Changed to dark shade
       ),
-      body: Obx(()=> projectListController.isLoading.value? Center(child: CircularProgressIndicator(color: AppColors.softGreen,)):
+      body: Obx(()=> projectListController.isLoading.value? const Center(child: CircularProgressIndicator(color: AppColors.backgroundColor,)):
          Container(
           decoration: const BoxDecoration(
               color :AppColors.backgroundColor
@@ -77,7 +77,6 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
   Widget _buildProjectCard({required String title, required String description}) {
     return Card(
       elevation: 6,
-      shadowColor: AppColors.softGreen.withOpacity(0.5), // Changed to vibrant color for shadow
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
@@ -85,7 +84,7 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
       child: Container(
         padding: EdgeInsets.all(Get.width * 0.04),
         decoration: BoxDecoration(
-          color: AppColors.lightNeutral, // Changed to light neutral
+          color: AppColors.white, // Changed to light neutral
           borderRadius: BorderRadius.circular(15),
         ),
         child: Column(
@@ -96,7 +95,7 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
               style: GoogleFonts.orbitron(
                 fontSize: Get.width * 0.05,
                 fontWeight: FontWeight.bold,
-                color: AppColors.softGreen, // Changed to vibrant color
+                color: AppColors.backgroundColor, // Changed to vibrant color
               ),
             ),
             SizedBox(height: Get.height * 0.01),
@@ -112,15 +111,16 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
               alignment: Alignment.bottomRight,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.snackbar(
-                    'Coming Soon',
-                    'Details for $title will be added shortly!',
-                    backgroundColor: AppColors.lightNeutral,
-                    colorText: AppColors.backgroundColor,
-                  );
+                  Get.toNamed('/projectDetail',parameters:{'name':title});
+                  // Get.snackbar(
+                  //   'Coming Soon',
+                  //   'Details for $title will be added shortly!',
+                  //   backgroundColor: AppColors.lightNeutral,
+                  //   colorText: AppColors.backgroundColor,
+                  // );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.softGreen, // Changed to vibrant color for button
+                  backgroundColor: AppColors.buttonBackgroundColor, // Changed to vibrant color for button
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -128,7 +128,7 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                 child: Text(
                   'View Details',
                   style: GoogleFonts.aBeeZee(
-                    color: Colors.white,
+                    color: AppColors.white,
                     fontSize: Get.width * 0.04,
                   ),
                 ),
